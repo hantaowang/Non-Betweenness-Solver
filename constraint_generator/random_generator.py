@@ -1,7 +1,7 @@
-# TODO: Everything
-
 import random as random
+import sys
 alphanumeric = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+numConstraints = 500
 
 # Generates n random wizards in a random order
 def makeWizards(length=20):
@@ -21,8 +21,8 @@ def chooseTwo(wizards):
     return w1, w2
 
 # Given the wizard order and the wizard at index i,
-# finds two other wizards j, k such that i is not
-# inbetween j and k
+# finds two other wizards at indices j, k such that
+# i is not inbetween j and k
 def notInBetween(wizards, i):
     if (i <= 1):
         w1, w2 = chooseTwo(wizards[i + 1:])
@@ -46,7 +46,7 @@ def makeConstraints(wizards):
     constraints = []
     for i in range(len(wizards)):
         constraints.append(notInBetween(wizards, i))
-    while len(constraints) < 500:
+    while len(constraints) < numConstraints:
         i = random.randint(0, len(wizards) - 1)
         con = notInBetween(wizards, i)
         if (con not in constraints):
@@ -54,8 +54,16 @@ def makeConstraints(wizards):
     random.shuffle(constraints)
     return constraints
 
-wizards = makeWizards(50)
-constraints = makeConstraints(wizards)
-
-print(wizards)
-print(constraints)
+if __name__ == "__main__":
+    numWizards = int(sys.argv[1])
+    wizards = makeWizards(numWizards)
+    constraints = makeConstraints(wizards)
+    f = open('input{0}.in'.format(numWizards),'w+')
+    f.write(str(numWizards) + "\n")
+    wizardOrder = " ".join(wizards)
+    f.write(wizardOrder  + "\n")
+    f.write(str(numConstraints))
+    for c in constraints:
+        f.write("\n")
+        f.write("{0} {1} {2}".format(c[0], c[1], c[2]))
+    f.close()
