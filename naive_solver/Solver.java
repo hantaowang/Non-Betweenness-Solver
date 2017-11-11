@@ -10,8 +10,8 @@ import java.io.FileReader;
 public class Solver {
 
   private final int MAX_TRIALS = 10000000;
-  ArrayList<Constraint> constraints = new ArrayList<>();
-  HashMap<String, Integer> order = new HashMap();
+  ArrayList<Constraint> constraints = new ArrayList<Constraint>();
+  HashMap<String, Integer> order = new HashMap<String, Integer>();
   String maxSatStr;
   int maxSat = 0;
 
