@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Map;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class Solver {
 
@@ -14,6 +16,7 @@ public class Solver {
   HashMap<String, Integer> order = new HashMap();
   String maxSatStr;
   int maxSat = 0;
+  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
   public Solver(String[] wizards, ArrayList<String> constArr) {
     List<String> list = Arrays.asList(wizards);
@@ -51,6 +54,9 @@ public class Solver {
       if (solved > maxSat) {
         maxSat = solved;
         maxSatStr = getCurrAnswer();
+        Date date = new Date();
+        System.out.print("[" + dateFormat.format(date) + "] ");
+        System.out.println(maxSat);
       }
       if (solved == order.size()) {
         return constraints.size();
