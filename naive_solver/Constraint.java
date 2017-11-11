@@ -24,7 +24,7 @@ public class Constraint {
     int aI = order.get(a);
     int bI = order.get(b);
     int cI = order.get(c);
-    if (aI < cI && cI < bI) {
+    if ((aI < cI && cI < bI) || (bI < cI && cI < aI)) {
       if (left) {
         swap(a, c);
         left = false;
