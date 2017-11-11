@@ -42,7 +42,7 @@ public class Solver {
 
   /**
    * Attempts to final the optimal solution in MAX_TRIALS iterations
-   * Returns true if so, false otherwise
+   * Returns the number of constraints solved
    */
   public int solve() {
     int solved = 0;
@@ -50,7 +50,7 @@ public class Solver {
       solved = solveOnce();
       if (solved > maxSat) {
         maxSat = solved;
-        maxSatStr = getBestAnswer();
+        maxSatStr = getCurrAnswer();
       }
       if (solved == order.size()) {
         return constraints.size();
@@ -62,7 +62,7 @@ public class Solver {
   /**
    * Returns the current answer
    */
-  public String getBestAnswer() {
+  public String getCurrAnswer() {
     HashMap<Integer, String> myNewHashMap = new HashMap<>();
     for(Map.Entry<String, Integer> entry : order.entrySet()){
       myNewHashMap.put(entry.getValue(), entry.getKey());
@@ -107,7 +107,7 @@ public class Solver {
       System.out.print("MAX SOL: ");
       System.out.println(s.maxSatStr);
       System.out.print("CUR SOL: ");
-      System.out.println(s.getBestAnswer());
+      System.out.println(s.getCurrAnswer());
       System.out.print("OPT SOL: ");
       System.out.println(wizardOrder);
 
