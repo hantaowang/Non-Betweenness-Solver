@@ -12,6 +12,8 @@ public class Solver {
   private final int MAX_TRIALS = 10000000;
   ArrayList<Constraint> constraints = new ArrayList<>();
   HashMap<String, Integer> order = new HashMap();
+  String maxSatStr;
+  int maxSat = 0;
 
   public Solver(String[] wizards, ArrayList<String> constArr) {
     List<String> list = Arrays.asList(wizards);
@@ -43,12 +45,18 @@ public class Solver {
    * Returns true if so, false otherwise
    */
   public int solve() {
+    int solved = 0;
     for (int i = 0; i < MAX_TRIALS; i ++) {
-      if (solveOnce() == order.size()) {
+      solved = solveOnce();
+      if (solved > maxSat) {
+        maxSat = solved;
+        maxSatStr = getBestAnswer();
+      }
+      if (solved == order.size()) {
         return constraints.size();
       }
     }
-    return solveOnce();
+    return solved;
   }
 
   /**
@@ -68,6 +76,8 @@ public class Solver {
 
   public static void main(String[] args) {
     try {
+
+      // Read and parse input file
       BufferedReader reader = new BufferedReader(new FileReader("./input50.in"));
       reader.readLine();
       String wizardOrder = reader.readLine();
@@ -82,13 +92,23 @@ public class Solver {
         constraints.add(con[2]);
       }
       reader.close();
+
+      // Solves and times constraints
       Solver s =  new Solver(wizards, constraints);
       long startTime = System.currentTimeMillis();
       int solved = s.solve();
       long endTime = System.currentTimeMillis();
       double solvedTime = (endTime - startTime)/ 1000.0;
-      System.out.println(String.format("Took %f seconds to satisfy %d constraints", solvedTime, solved));
+
+      // Prints results
+      System.out.println("TOOK: " + Double.toString(solvedTime) + " seconds");
+      System.out.println("MAX SAT: " + s.maxSat);
+      System.out.println("CUR SAT: " + solved);
+      System.out.print("MAX SOL: ");
+      System.out.println(s.maxSatStr);
+      System.out.print("CUR SOL: ");
       System.out.println(s.getBestAnswer());
+      System.out.print("OPT SOL: ");
       System.out.println(wizardOrder);
 
     } catch (Exception e) {
