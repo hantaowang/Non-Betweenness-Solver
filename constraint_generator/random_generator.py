@@ -40,6 +40,14 @@ def notInBetween(wizards, i):
             w1, w2 = chooseTwo(wizards[i+1:])
     return (w1, w2, wizards[i])
 
+def containsConstrain(con, constraints):
+    for c in constraints:
+        if con[0] == c[0] and con[1] == c[1] and con[2] == c[2]:
+            return False
+        if con[0] == c[1] and con[1] == c[0] and con[2] == c[2]:
+            return False
+    return True
+
 # Generates 500 random constraints with at least
 # one for each wizard
 def makeConstraints(wizards):
@@ -49,7 +57,7 @@ def makeConstraints(wizards):
     while len(constraints) < numConstraints:
         i = random.randint(0, len(wizards) - 1)
         con = notInBetween(wizards, i)
-        if (con not in constraints):
+        if (containsConstrain(con, constraints)):
             constraints.append(con)
     random.shuffle(constraints)
     return constraints
