@@ -58,7 +58,7 @@ public class Solver {
         System.out.print("[" + dateFormat.format(date) + "] ");
         System.out.println(maxSat);
       }
-      if (solved == order.size()) {
+      if (solved == constraints.size()) {
         return constraints.size();
       }
     }
