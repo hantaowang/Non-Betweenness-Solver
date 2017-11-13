@@ -25,7 +25,7 @@ public class Constraint {
     int bI = order.get(b);
     int cI = order.get(c);
     if ((aI < cI && cI < bI) || (bI < cI && cI < aI)) {
-      if (left) {
+      if (Math.random() < 0.5) {
         swap(a, c);
         left = false;
       } else {

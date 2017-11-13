@@ -11,7 +11,10 @@ import java.text.SimpleDateFormat;
 
 public class Solver {
 
-  private final int MAX_TRIALS = 10000000;
+  // Whether to run to completion
+  private boolean INFINITE_TRIALS = false;
+
+  private final int MAX_TRIALS = 1000000;
   ArrayList<Constraint> constraints = new ArrayList<Constraint>();
   HashMap<String, Integer> order = new HashMap<String, Integer>();
   String maxSatStr;
@@ -49,7 +52,8 @@ public class Solver {
    */
   public int solve() {
     int solved = 0;
-    for (int i = 0; i < MAX_TRIALS; i ++) {
+    int i = 0;
+    while (i < MAX_TRIALS) {
       solved = solveOnce();
       if (solved > maxSat) {
         maxSat = solved;
@@ -60,6 +64,9 @@ public class Solver {
       }
       if (solved == constraints.size()) {
         return constraints.size();
+      }
+      if (!INFINITE_TRIALS) {
+        i++;
       }
     }
     return solved;
@@ -81,16 +88,18 @@ public class Solver {
   }
 
   public static void main(String[] args) {
-    try {
+    String[] wizards = new String[0];
+    ArrayList<String> constraints = new ArrayList<>();
+    String wizardOrder = "";
 
+    try {
       // Read and parse input file
-      BufferedReader reader = new BufferedReader(new FileReader("./input50.in"));
+      BufferedReader reader = new BufferedReader(new FileReader(args[0]));
       reader.readLine();
-      String wizardOrder = reader.readLine();
-      String[] wizards = wizardOrder.split(" ");
+      wizardOrder = reader.readLine();
+      wizards = wizardOrder.split(" ");
       reader.readLine();
       String line;
-      ArrayList<String> constraints = new ArrayList<>();
       while ((line = reader.readLine()) != null) {
         String[] con = line.split(" ");
         constraints.add(con[0]);
@@ -99,8 +108,7 @@ public class Solver {
       }
       reader.close();
 
-      // Solves and times constraints
-      Solver s =  new Solver(wizards, constraints);
+      Solver s = new Solver(wizards, constraints);;
       long startTime = System.currentTimeMillis();
       int solved = s.solve();
       long endTime = System.currentTimeMillis();
@@ -122,5 +130,4 @@ public class Solver {
       e.printStackTrace();
     }
   }
-
 }
