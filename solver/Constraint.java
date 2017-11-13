@@ -4,7 +4,6 @@ public class Constraint {
 
   private String a, b, c;
   private HashMap<String, Integer> order;
-  private boolean left = true;
 
   public Constraint(HashMap<String, Integer> order, String a, String b, String c) {
     this.a = a;
@@ -27,10 +26,8 @@ public class Constraint {
     if ((aI < cI && cI < bI) || (bI < cI && cI < aI)) {
       if (Math.random() < 0.5) {
         swap(a, c);
-        left = false;
       } else {
         swap(c, b);
-        left = true;
       }
       return 0;
     }

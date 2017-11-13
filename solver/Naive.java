@@ -9,19 +9,19 @@ import java.io.FileReader;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-public class Solver {
+public class Naive implements Solver {
 
   // Whether to run to completion
   private boolean INFINITE_TRIALS = false;
 
   private final int MAX_TRIALS = 1000000;
-  ArrayList<Constraint> constraints = new ArrayList<Constraint>();
-  HashMap<String, Integer> order = new HashMap<String, Integer>();
-  String maxSatStr;
-  int maxSat = 0;
-  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+  private ArrayList<Constraint> constraints = new ArrayList<Constraint>();
+  private HashMap<String, Integer> order = new HashMap<String, Integer>();
+  private String maxSatStr;
+  public int maxSat = 0;
+  private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
-  public Solver(String[] wizards, ArrayList<String> constArr) {
+  public Naive(String[] wizards, ArrayList<String> constArr) {
     List<String> list = Arrays.asList(wizards);
     Collections.shuffle(list);
     for (int i = 0; i < wizards.length; i++) {
@@ -47,7 +47,7 @@ public class Solver {
   }
 
   /**
-   * Attempts to final the optimal solution in MAX_TRIALS iterations
+   * Attempts to find the optimal solution in MAX_TRIALS iterations
    * Returns the number of constraints solved
    */
   public int solve() {
@@ -87,47 +87,18 @@ public class Solver {
     return String.join(" ", answerList);
   }
 
-  public static void main(String[] args) {
-    String[] wizards = new String[0];
-    ArrayList<String> constraints = new ArrayList<>();
-    String wizardOrder = "";
-
-    try {
-      // Read and parse input file
-      BufferedReader reader = new BufferedReader(new FileReader(args[0]));
-      reader.readLine();
-      wizardOrder = reader.readLine();
-      wizards = wizardOrder.split(" ");
-      reader.readLine();
-      String line;
-      while ((line = reader.readLine()) != null) {
-        String[] con = line.split(" ");
-        constraints.add(con[0]);
-        constraints.add(con[1]);
-        constraints.add(con[2]);
-      }
-      reader.close();
-
-      Solver s = new Solver(wizards, constraints);;
-      long startTime = System.currentTimeMillis();
-      int solved = s.solve();
-      long endTime = System.currentTimeMillis();
-      double solvedTime = (endTime - startTime)/ 1000.0;
-
-      // Prints results
-      System.out.println("TOOK: " + Double.toString(solvedTime) + " seconds");
-      System.out.println("MAX SAT: " + s.maxSat);
-      System.out.println("CUR SAT: " + solved);
-      System.out.print("MAX SOL: ");
-      System.out.println(s.maxSatStr);
-      System.out.print("CUR SOL: ");
-      System.out.println(s.getCurrAnswer());
-      System.out.print("OPT SOL: ");
-      System.out.println(wizardOrder);
-
-    } catch (Exception e) {
-      System.err.format(e.getMessage());
-      e.printStackTrace();
-    }
+  /**
+   * Returns the best answer
+   */
+  public String getBestAnswer() {
+    return maxSatStr;
   }
+
+  /**
+   * Returns the best answer
+   */
+  public int getMaxSat() {
+    return maxSat;
+  }
+
 }
