@@ -21,6 +21,6 @@ files += [os.path.join(path35, f) for f in os.listdir(path35)]
 files += [os.path.join(path50, f) for f in os.listdir(path50)]
 print files
 
-poo = Pool(4) 
-results = poo.map(runF, files)
+poo = Pool(8) 
+results = poo.map(runF, sorted(files))
 print(results)

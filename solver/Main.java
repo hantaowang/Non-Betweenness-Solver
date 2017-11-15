@@ -56,7 +56,8 @@ public class Main {
             System.out.print(constraints.size()/3);
             String[] fileNames = args[0].split("/");
             String fileName = fileNames[fileNames.length - 1].replace("input", "output");
-            PrintWriter writer = new PrintWriter("output/" + fileName, "UTF-8");
+            fileName = fileName.replace("in", "out");	
+	    PrintWriter writer = new PrintWriter("outputs/" + fileName, "UTF-8");
             writer.print(s.getBestAnswer());
             writer.close();
         } catch (Exception e) {

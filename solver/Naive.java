@@ -22,6 +22,7 @@ public class Naive implements Solver {
   public Naive(String[] wizards, ArrayList<String> constArr) {
     List<String> list = Arrays.asList(wizards);
     Collections.shuffle(list);
+//    Collections.shuffle(constArr);
     for (int i = 0; i < wizards.length; i++) {
       order.put(list.get(i), i);
     }
