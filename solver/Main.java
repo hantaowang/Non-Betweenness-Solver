@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -40,7 +41,7 @@ public class Main {
             long endTime = System.currentTimeMillis();
             double solvedTime = (endTime - startTime)/ 1000.0;
 
-            // Prints results
+//            Prints results
 //            System.out.println("TOOK: " + Double.toString(solvedTime) + " seconds");
 //            System.out.println("MAX SAT: " + s.getMaxSat());
 //            System.out.println("CUR SAT: " + solved);
@@ -50,9 +51,14 @@ public class Main {
 //            System.out.println(s.getCurrAnswer());
 //            System.out.print("OPT SOL: ");
 //            System.out.println(wizardOrder);
-              System.out.print(s.getMaxSat());
-	      System.out.print("/");
-              System.out.print(constraints.size()/3); 
+            System.out.print(s.getMaxSat());
+            System.out.print("/");
+            System.out.print(constraints.size()/3);
+            String[] fileNames = args[0].split("/");
+            String fileName = fileNames[fileNames.length - 1].replace("input", "output");
+            PrintWriter writer = new PrintWriter("output/" + fileName, "UTF-8");
+            writer.print(s.getBestAnswer());
+            writer.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
