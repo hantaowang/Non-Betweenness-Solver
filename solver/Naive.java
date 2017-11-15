@@ -14,7 +14,7 @@ public class Naive implements Solver {
   // Whether to run to completion
   private boolean INFINITE_TRIALS = false;
 
-  private final int MAX_TRIALS = 1000000;
+  private final int MAX_TRIALS = 100000000;
   private ArrayList<Constraint> constraints = new ArrayList<Constraint>();
   private HashMap<String, Integer> order = new HashMap<String, Integer>();
   private String maxSatStr;
@@ -59,8 +59,8 @@ public class Naive implements Solver {
         maxSat = solved;
         maxSatStr = getCurrAnswer();
         Date date = new Date();
-        System.out.print("[" + dateFormat.format(date) + "] ");
-        System.out.println(maxSat);
+        // System.out.print("[" + dateFormat.format(date) + "] ");
+        // System.out.println(maxSat);
       }
       if (solved == constraints.size()) {
         return constraints.size();
