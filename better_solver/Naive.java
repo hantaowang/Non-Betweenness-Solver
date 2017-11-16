@@ -9,10 +9,6 @@ import java.text.SimpleDateFormat;
 
 public class Naive implements Solver {
 
-  // Whether to run to completion
-  private boolean INFINITE_TRIALS = false;
-
-  private final int MAX_TRIALS = 1000000000;
   private ArrayList<Constraint> constraints = new ArrayList<Constraint>();
   private HashMap<String, Integer> order = new HashMap<String, Integer>();
   private String maxSatStr;
@@ -21,8 +17,7 @@ public class Naive implements Solver {
 
   public Naive(String[] wizards, ArrayList<String> constArr) {
     List<String> list = Arrays.asList(wizards);
-    //Collections.shuffle(list);
-    //Collections.shuffle(constArr);
+    Collections.shuffle(list);
     for (int i = 0; i < wizards.length; i++) {
       order.put(list.get(i), i);
     }
@@ -31,6 +26,7 @@ public class Naive implements Solver {
       Constraint c = new Constraint(order, constArr.get(i), constArr.get(i+1), constArr.get(i+2));
       constraints.add(c);
     }
+    Collections.shuffle(constraints);
   }
 
   /**
@@ -69,14 +65,14 @@ public class Naive implements Solver {
    */
   public int solve() {
     int solved = 0;
-    int i = 0;
     int repeat = 0;
-    while (i < MAX_TRIALS) {
+    int i = 1;
+    while (true) {
       System.out.println("ITERATION " + Integer.toString(i));
       solved = solveOnce();
       if (solved <= maxSat) {
         repeat++;
-        if (repeat >= 50) {
+        if (repeat >= 10) {
           throw new RuntimeException();
         }
       }
@@ -88,15 +84,12 @@ public class Naive implements Solver {
         System.out.println(maxSat);
       }
       if (solved == constraints.size()) {
+        System.out.println("SOLVED IN " + Integer.toString(i) + " ITERATIONS");
         maxSatStr = getCurrAnswer();
         return constraints.size();
       }
-      if (!INFINITE_TRIALS) {
-        i++;
-      }
+      i++;
     }
-    maxSatStr = getCurrAnswer();
-    return solved;
   }
 
   /**

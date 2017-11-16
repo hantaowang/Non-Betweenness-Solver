@@ -42,24 +42,24 @@ public class Main {
             double solvedTime = (endTime - startTime)/ 1000.0;
 
 //            Prints results
-//            System.out.println("TOOK: " + Double.toString(solvedTime) + " seconds");
-//            System.out.println("MAX SAT: " + s.getMaxSat());
-//            System.out.println("CUR SAT: " + solved);
-//            System.out.print("MAX SOL: ");
-//            System.out.println(s.getBestAnswer());
-//            System.out.print("CUR SOL: ");
-//            System.out.println(s.getCurrAnswer());
-//            System.out.print("OPT SOL: ");
-//            System.out.println(wizardOrder);
+            System.out.println("TOOK: " + Double.toString(solvedTime) + " seconds");
+            System.out.println("MAX SAT: " + s.getMaxSat());
+            System.out.println("CUR SAT: " + solved);
+            System.out.print("MAX SOL: ");
+            System.out.println(s.getBestAnswer());
+            System.out.print("CUR SOL: ");
+            System.out.println(s.getCurrAnswer());
+            System.out.print("OPT SOL: ");
+            System.out.println(wizardOrder);
             System.out.print(s.getMaxSat());
-            System.out.print("/");
-            System.out.print(constraints.size()/3);
-            String[] fileNames = args[0].split("/");
-            String fileName = fileNames[fileNames.length - 1].replace("input", "output");
-            fileName = fileName.replace("in", "out");	
-	    PrintWriter writer = new PrintWriter("outputs/" + fileName, "UTF-8");
-            writer.print(s.getBestAnswer());
-            writer.close();
+//            System.out.print("/");
+//            System.out.print(constraints.size()/3);
+//            String[] fileNames = args[0].split("/");
+//            String fileName = fileNames[fileNames.length - 1].replace("input", "output");
+//            fileName = fileName.replace("in", "out");
+//	    PrintWriter writer = new PrintWriter("outputs/" + fileName, "UTF-8");
+//            writer.print(s.getBestAnswer());
+//            writer.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

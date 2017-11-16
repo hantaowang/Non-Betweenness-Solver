@@ -51,7 +51,7 @@ public class Naive implements Solver {
    */
   public int solve() {
     int solved = 0;
-    int i = 0;
+    int i = 1;
     while (i < MAX_TRIALS) {
       solved = solveOnce();
       if (solved > maxSat) {
@@ -62,6 +62,7 @@ public class Naive implements Solver {
         // System.out.println(maxSat);
       }
       if (solved == constraints.size()) {
+        System.out.println("SOLVED IN " + Integer.toString(i) + " ITERATIONS");
         return constraints.size();
       }
       if (!INFINITE_TRIALS) {

@@ -47,10 +47,10 @@ public class Main {
                     solved = s.solve();
                     run = false;
                 } catch (RuntimeException e) {
-                    System.out.println("SHUFFLED");
-                    List<String> list = new ArrayList<>(wizardSet);
-                    Collections.shuffle(list);
-                    s = new Naive(list.toArray(new String[0]), constraints);
+                    System.out.println("~~~~~~~~~~~~~~~~~ SHUFFLED ~~~~~~~~~~~~~~~~~");
+                    //List<String> list = new ArrayList<>(wizardSet);
+                    //Collections.shuffle(list);
+                    s = new Naive(wizardSet.toArray(new String[0]), constraints);
                 }
             }
             long endTime = System.currentTimeMillis();
