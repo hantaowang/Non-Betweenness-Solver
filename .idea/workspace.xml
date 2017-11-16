@@ -2,95 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55c8c0f4-c105-415d-b99a-57b888044231" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/inputs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Constraint.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Main.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Naive.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Solver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ben-input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ben-input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ben-input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/michelle-input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/michelle-input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/michelle-input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ours-input20.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ours-input35.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/inputs/ours-input50.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_0.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_1.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_2.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_3.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_4.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_5.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_6.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_7.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_8.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/output/output20_9.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_0.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_1.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_2.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_3.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_4.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_5.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_6.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_7.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_8.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output20_9.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_0.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_1.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_2.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_3.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_4.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_5.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_6.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_7.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_8.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output35_9.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_0.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_1.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_2.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_3.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_4.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_5.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_6.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_7.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_8.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/outputs/output50_9.out" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_0.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_1.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_2.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_3.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_4.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_5.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_6.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_7.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_8.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs20/input20_9.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_0.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_1.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_2.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_3.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_4.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_5.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_6.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_7.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_8.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs35/input35_9.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_0.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_1.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_2.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_3.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_4.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_5.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_6.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_7.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_8.in" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/solver/phase2_inputs/inputs50/input50_9.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/better_solver/Main.java" afterPath="$PROJECT_DIR$/better_solver/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friends_inputs/michelle-input35.in" afterPath="$PROJECT_DIR$/friends_inputs/michelle-input35.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friends_inputs/ours-input35.in" afterPath="$PROJECT_DIR$/friends_inputs/ours-input35.in" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friends_inputs/ours-input50.in" afterPath="$PROJECT_DIR$/friends_inputs/ours-input50.in" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,8 +51,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/better_solver/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state relative-caret-position="550">
+              <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -627,12 +542,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510814601645</updated>
-      <workItem from="1510814603377" duration="179000" />
+      <workItem from="1510814603377" duration="1000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179000" />
+    <option name="totallyTimeSpent" value="1000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="6" />
@@ -705,8 +620,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/better_solver/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state relative-caret-position="550">
+          <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -62,8 +62,8 @@ public class Main {
             System.out.println("CUR SAT: " + solved);
             System.out.print("MAX SOL: ");
             System.out.println(s.getBestAnswer());
-            System.out.print("CUR SOL: ");
-            System.out.println(s.getCurrAnswer());
+//            System.out.print("CUR SOL: ");
+//            System.out.println(s.getCurrAnswer());
 //            System.out.print("OPT SOL: ");
 //            System.out.println(wizardOrder);
 //            System.out.print(s.getMaxSat());
