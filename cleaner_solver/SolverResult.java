@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-/** A SOLVERRESULT object that contains a tuple COMPLETED, Integer SATISFIED,
+/** A SOLVERRESULT object that contains a boolean COMPLETED, Integer SATISFIED,
 * and a HashMap ORDER. Used to transfer results from SOLVER to MAIN.
 */
 public class SolverResult {
