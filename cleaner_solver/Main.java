@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Collections;
 
 /** The MAIN class that executes SOLVER until it finds a solution or reaches
-* MAXITERATIONS times, whichever comes first. This class reads an INPUT file
-* and creates an OUTPUT file with the most optimal solution found.
+* MAXITERATIONS iterations, whichever comes first. This class reads an INPUT file
+* and prints out the most optimal solution found.
 */
 public class Main {
     public static void main(String[] args) {
