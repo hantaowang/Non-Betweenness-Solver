@@ -1,3 +1,9 @@
+[00084 sec] 0: ../all_submissions/submission_4714907_input50.in
+TOOK: 84.015 seconds
+TOTAL SAT: 492
+CUR SAT: 492
+MAX SOL: Tilly Trisha Colm Mitch Davis Aniyah Anika Tracey Bert Aidan Janet Lesley Gracie Krista Rufus Orlando Libby Cody Mariana Zed Brooke Fay Margie Ryleigh Triston Holly Nathan Tomas Rochelle Ryland Annette Mateo Jan Palmer Jay Rose Amaya Carley Tommie Dashee Sondra Devin Kimberly Deidre Jeffry Maggie Gregory Kierra Sammy Jeanine
+
 [00152 sec] 1: ../all_submissions/submission_4698002_input50.in
 TOOK: 152.385 seconds
 TOTAL SAT: 500
