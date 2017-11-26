@@ -1,3 +1,12 @@
+[32257 sec] 4: ../all_submissions/submission_4716708_input50.in
+TOOK: 32257.055 seconds
+TOTAL SAT: 500
+CUR SAT: 500
+MAX SOL: Seb Alex Earnest Sara Maurice Wendy Micheal Paulina Ariana Monte Jamal Ciaran Cynthia Eliza Gena Mary J
+oni Ross Susan Colby Isobel Alanna Mateo Calum Liliana Rickey Deirdre Madeleine Joselyn Uriah Darrell Krista Vij
+ay Tania Bryce Delaney Eric Trina Brendan Bradley Trevon Liza Eloise Lionel Ashton Frederick Terrance Regina Ale
+xia Lowell
+
 [00084 sec] 0: ../all_submissions/submission_4714907_input50.in
 TOOK: 84.015 seconds
 TOTAL SAT: 492
