@@ -17,7 +17,7 @@ The program requires the problem to be formatted as input files like such
     ...
     xn yn zn
    
-Where the constraint `x y z` denotes that `z` is not inbetween `x` or `y`. Compile the java files and run with `java Main [path to input file]`. 
+Where the constraint `x y z` denotes that `z` is not inbetween `x` or `y`. All variables must appear in at least one constraint (or else it wouldn't matter where that variable is in the ordering). Compile the java files and run with `java Main [path to input file]`. 
 
 ### Inputs
 There are almost 1000 sample inputs of varriying difficulty to test on in the `inputs/` folder. For the most part, STAFF > INPUTS > SUBMISSION in terms of difficulty. To generate some random ones, you can use the `random_generator.py` script. 
