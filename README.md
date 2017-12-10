@@ -4,7 +4,7 @@
 
 The Betweeness problem is a well known NP-Complete algorithmic problem in order theory about ordering a collection of items subject to constraints such that some items must be placed between others. Its also NP-Complete converse, the Non-Betweeness problem, constrains items such that they must NOT be placed between others.
 
-This simple probabilistic algorithm was designed for CS 170 at UC Berkeley during Spring 2017 by Anson Tsai, Hantao Wang, and Jennifer Liu. It won first place in terms of ability to efficiently solve the Non-Betweeness problem. The algorithm can solve all 991 files in `/inputs` in an hour or so when multithreaded. A document on how it works can be found here [here](https://docs.google.com/document/d/1uWx657CyZIjyAFPeXW_qFz8cP9als6RWPrsoK4nNEXE/edit?usp=sharing).
+This simple randomized algorithm was designed for CS 170 at UC Berkeley during Spring 2017 by Anson Tsai, Hantao Wang, and Jennifer Liu. It won first place in terms of ability to efficiently solve the Non-Betweeness problem. The algorithm can solve all 991 files in `/inputs` in an hour or so when multithreaded. A document on how it works can be found here [here](https://docs.google.com/document/d/1uWx657CyZIjyAFPeXW_qFz8cP9als6RWPrsoK4nNEXE/edit?usp=sharing).
 
 ### Usage
 
