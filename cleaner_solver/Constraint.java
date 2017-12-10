@@ -6,15 +6,12 @@ import java.util.HashMap;
 public class Constraint {
     /** Where a, b, c represents WIZARDS. */
     private String a, b, c;
-    /** HashMap that defines an order of WIZARDS. (Key = WIZARD, Value = PLACE). */
-    private HashMap<String, Integer> order;
 
     /** Constraint Constructor */
-    public Constraint(HashMap<String, Integer> order, String a, String b, String c) {
+    public Constraint(String a, String b, String c) {
         this.a = a;
         this.b = b;
         this.c = c;
-        this.order = order;
     }
 
     /** Returns WIZARD A. */
@@ -33,14 +30,28 @@ public class Constraint {
     }
 
     /** Method that swaps locations of WIZARDS X and Y in ORDER. */
-    public void swap(String x, String y) {
+    public void swap(HashMap<String, Integer> order, String x, String y) {
         int temp = order.get(x);
         order.put(x, order.get(y));
         order.put(y, temp);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof Constraint)) {
+            return false;
+        }
+        Constraint c = (Constraint) o;
+        return c.getC().equals(getC()) &&
+                ((c.getA().equals(getA()) && c.getB().equals(getB())) ||
+                (c.getA().equals(getB()) && c.getB().equals(getA())));
+    }
+
     /** Returns 1 if CONSTRAINT is satisfied and 0 otherwise. */
-    public int satisfy() {
+    public int satisfy(HashMap<String, Integer> order) {
         int aI = order.get(a);
         int bI = order.get(b);
         int cI = order.get(c);

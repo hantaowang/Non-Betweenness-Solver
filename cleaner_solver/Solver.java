@@ -1,9 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Collections;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
 import java.text.SimpleDateFormat;
 
 /** A SOLVER that iterates through all the CONSTRAINTS and tries to satisfy all
@@ -14,7 +9,7 @@ import java.text.SimpleDateFormat;
 */
 public class Solver {
     /** ArrayList of CONSTRAINTS. */
-    private ArrayList<Constraint> constraints = new ArrayList<Constraint>();
+    private ArrayList<Constraint> constraints;
     /** HashMap ORDER that will hold WIZARDS and their placement. */
     private HashMap<String, Integer> order = new HashMap<String, Integer>();
     /** Integer MAXSAT that holds the maximum number of CONSTRAINTS satisfied. */
@@ -27,17 +22,12 @@ public class Solver {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     /** Constructor for SOLVER. Shuffles given order of WIZARDS and CONSTRAINTS. */
-    public Solver(String[] wizards, ArrayList<String> constraintArray) {
-        List<String> wizardList = Arrays.asList(wizards);
-        Collections.shuffle(wizardList);
-        for (int i =  0; i < wizards.length; i++) {
-            order.put(wizardList.get(i), i);
+    public Solver(ArrayList<String> wizards, ArrayList<Constraint> constraintArray) {
+        Collections.shuffle(wizards);
+        for (int i =  0; i < wizards.size(); i++) {
+            order.put(wizards.get(i), i);
         }
-
-        for (int i = 0; i < constraintArray.size(); i += 3) {
-            Constraint c = new Constraint(order, constraintArray.get(i), constraintArray.get(i+1), constraintArray.get(i+2));
-            constraints.add(c);
-        }
+        this.constraints = constraintArray;
         Collections.shuffle(constraints);
     }
 
@@ -45,7 +35,7 @@ public class Solver {
     private int numSat() {
         int numSatisfied = 0;
         for (Constraint c: constraints) {
-            numSatisfied += c.satisfy();
+            numSatisfied += c.satisfy(order);
         }
         return numSatisfied;
     }
@@ -53,16 +43,16 @@ public class Solver {
     /** Iterates through each CONSTRAINT once and returns the number satisfied. */
     private int solveOnce() {
         for (Constraint constraint: constraints) {
-            int sat = constraint.satisfy();
+            int sat = constraint.satisfy(order);
             if (sat == 0) {
-                constraint.swap(constraint.getA(), constraint.getC());
+                constraint.swap(order, constraint.getA(), constraint.getC());
                 int swapA = numSat();
-                constraint.swap(constraint.getC(), constraint.getA());
-                constraint.swap(constraint.getB(), constraint.getC());
+                constraint.swap(order, constraint.getC(), constraint.getA());
+                constraint.swap(order, constraint.getB(), constraint.getC());
                 int swapB = numSat();
                 if (swapA > swapB) {
-                  constraint.swap(constraint.getC(), constraint.getB());
-                  constraint.swap(constraint.getA(), constraint.getC());
+                  constraint.swap(order, constraint.getC(), constraint.getB());
+                  constraint.swap(order, constraint.getA(), constraint.getC());
                 }
             }
         }
@@ -90,9 +80,7 @@ public class Solver {
             } else {
                 maxSat = numSolved;
                 repetitions = 0;
-                Date date = new Date();
-                System.out.print("[" + dateFormat.format(date) + "] ");
-                System.out.println(maxSat);
+                System.out.println("SATISFIED " + maxSat);
             }
             if (numSolved == constraints.size()) {
                 completed = true;
