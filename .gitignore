@@ -1,6 +1,4 @@
 *.class
 .idea/
 .DS_Store
-/out
 *.iml
-
