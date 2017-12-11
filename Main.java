@@ -76,7 +76,6 @@ public class Main {
                         c.getC(), c.getA(), c.getB()));
             }
         }
-        System.out.println(removed);
         for (Constraint c: removeList) {
             constraints.remove(c);
         }
