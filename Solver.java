@@ -14,6 +14,7 @@ public class Solver {
     private HashMap<String, Integer> order = new HashMap<String, Integer>();
     /** Integer MAXSAT that holds the maximum number of CONSTRAINTS satisfied. */
     private int maxSat = 0;
+    private int removed;
     /** Integer MAXREPETITIONS that defines the max number of reptitions SOLVER
     * executes without any improvement.
     */
@@ -22,13 +23,14 @@ public class Solver {
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 
     /** Constructor for SOLVER. Shuffles given order of WIZARDS and CONSTRAINTS. */
-    public Solver(ArrayList<String> wizards, ArrayList<Constraint> constraintArray) {
+    public Solver(ArrayList<String> wizards, ArrayList<Constraint> constraintArray, int removed) {
         Collections.shuffle(wizards);
         for (int i =  0; i < wizards.size(); i++) {
             order.put(wizards.get(i), i);
         }
         this.constraints = constraintArray;
         Collections.shuffle(constraints);
+	this.removed = removed;
     }
 
     /** Returns the number of CONSTRAINTS satisfied */
@@ -80,7 +82,7 @@ public class Solver {
             } else {
                 maxSat = numSolved;
                 repetitions = 0;
-                System.out.println("SATISFIED " + maxSat);
+                System.out.println("SATISFIED " + Integer.toString(maxSat + removed));
             }
             if (numSolved == constraints.size()) {
                 completed = true;

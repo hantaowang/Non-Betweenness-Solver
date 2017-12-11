@@ -34,6 +34,9 @@ public class Main {
             wizardOrder.split(" ");
             String line;
             while ((line = reader.readLine()) != null) {
+                if (line.trim().equals("")) {
+                    continue;
+                }
                 String[] con = line.split(" ");
                 Constraint c = new Constraint(con[0], con[1], con[2]);
                 if (constraints.contains(c)) {
@@ -49,8 +52,8 @@ public class Main {
                 if (!wizardSet.contains(con[1])) {
                     wizardSet.add(con[1]);
                 }
-                if (!wizardSet.contains(con[1])) {
-                    wizardSet.add(con[1]);
+                if (!wizardSet.contains(con[2])) {
+                    wizardSet.add(con[2]);
                 }
             }
             assert wizardSet.size() == Integer.parseInt(a);
@@ -80,7 +83,7 @@ public class Main {
             constraints.remove(c);
         }
 
-        Solver s = new Solver(wizardSet, constraints);
+        Solver s = new Solver(wizardSet, constraints, removed);
         long startTime = System.currentTimeMillis();
         int numIterations = 0;
         boolean completed = false;
@@ -96,7 +99,7 @@ public class Main {
                 optOrder = result.getOrder();
                 System.out.println("MORE OPTIMAL ORDERING FOUND. MAXSAT: " + Integer.toString(maxSat + removed));
             }
-            s = new Solver(wizardSet, constraints);
+            s = new Solver(wizardSet, constraints, removed);
             numIterations++;
         }
 
