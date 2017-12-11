@@ -1,7 +1,6 @@
 import random as random
 import sys
 alphanumeric = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-numConstraints = 500
 
 # Generates n random wizards in a random order
 def makeWizards(length=20):
@@ -63,8 +62,8 @@ def makeConstraints(wizards, numConstraints):
     return constraints
 
 if __name__ == "__main__":
-    if len(sys.argv[1]) != 2:
-        print "How to Use: python random_generator.py [num of wizards] [num of constraints] [file to write to]"
+    if len(sys.argv) != 4:
+        print "How to Use: python random_generator.py [num of variables] [num of constraints] [filename to write to]"
     numWizards = int(sys.argv[1])
     numConstraints = int(sys.argv[2])
     wizards = makeWizards(numWizards)
